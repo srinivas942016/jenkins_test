@@ -26,7 +26,7 @@ pipeline {
 			
 		stage('build') {
 			steps {
-                // Run Maven on a Unix agent.
+                // Run Maven on a Unix agent. s
                 sh "mvn -Dmaven.test.failure.ignore=true -f api-gateway clean package"
 
                 // To run Maven on a Windows agent, use
