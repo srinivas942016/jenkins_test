@@ -18,29 +18,12 @@ pipeline {
 		}
 		
 		stage('print') {
-		    agent { label 'linux' }
+		    
 		    steps {
 		        sh "echo testing running a stage on node"
 		    }
 		}
 			
-		stage('build') {
-			steps {
-                // Run Maven on a Unix agent. s
-                sh "mvn -Dmaven.test.failure.ignore=true -f api-gateway clean package"
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit 'api-gateway/target/surefire-reports/*.xml'
-                    archiveArtifacts artifacts: 'api-gateway/target/*.jar', followSymlinks: false
-                }
-            }
-        }
+		
     }
 }
