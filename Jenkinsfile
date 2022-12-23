@@ -4,7 +4,7 @@ pipeline {
     agent any
     
     tools {
-        // Install the Maven version configured as "M3" 
+        // Install the Mavthen version configured as "M3" 
         maven "MVN3"
 		jdk "jdk8"
     }
