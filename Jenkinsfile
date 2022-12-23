@@ -3,11 +3,7 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     
-    tools {
-        // Install the Mavthen version configured as "M3" 
-        maven "MVN3"
-		jdk "jdk8"
-    }
+   
 
     stages {
         stage('Pullscm') {
@@ -20,7 +16,7 @@ pipeline {
 		stage('print') {
 		    
 		    steps {
-		        sh "echo testing running a stage on node"
+		        sh "echo testing running a stage on node and git code pulled successfully"
 		    }
 		}
 			
