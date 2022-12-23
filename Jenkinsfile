@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Pullscm') {
             steps {
-                // Get some code from a GitHub repository
+                // Get some code from a GitHub re testpository
                 git credentialsId: 'github', url: 'git@github.com:srinivas942016/jenkins_test.git'
 			}
 		}
